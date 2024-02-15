@@ -20,7 +20,8 @@ public class TelaDeGrafico extends JFrame {
         setLocationRelativeTo(null);
         
         //criarGraficoDePizza();
-        criarGraficoBarras();
+        //criarGraficoBarras();
+        criarGraficoDeLinhas();
        
        setVisible(true);
     }
@@ -101,6 +102,23 @@ public class TelaDeGrafico extends JFrame {
         
         add(painel);
     }
+
+    public void criarGraficoDeLinhas() {
+        
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.addValue(100, "Series 1", "Category 1");
+        dataset.addValue(300, "Series 1", "Category 2");
+        dataset.addValue(50, "Series 1", "Category 3");
+        dataset.addValue(400, "Series 1", "Category 4");
+        dataset.addValue(200, "Series 1", "Category 5");
+        
+        JFreeChart chart = ChartFactory.createLineChart( "Line Chart Example","Category", "Value", dataset);
+        
+        ChartPanel painel = new ChartPanel(chart);
+        add(painel);
+    }
+}
+
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
